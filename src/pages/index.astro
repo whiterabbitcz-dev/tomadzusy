@@ -8,11 +8,13 @@ import homeData from '../data/home.json';
 
 <Layout title="Toma Džusy - Původní česká značka">
   <div class="min-h-full flex flex-col">
-    <!-- Navigation -->
-    <Navigation />
+    <!-- Navigation (with padding) -->
+    <div class="px-4 md:px-6 lg:px-8">
+      <Navigation />
+    </div>
     
     <!-- Main Content - Centered vertically and horizontally -->
-    <div class="flex-1 flex items-center justify-center py-8 md:py-12">
+    <div class="flex-1 flex items-center justify-center py-8 md:py-12 px-4 md:px-6 lg:px-8">
       <div class="w-full max-w-3xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
@@ -49,7 +51,7 @@ import homeData from '../data/home.json';
       </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer (full width, no side padding) -->
     <Footer />
   </div>
 </Layout>
