@@ -32,13 +32,10 @@ const { type, data, category } = Astro.props;
     title={`${data.title} ${data.subtitle} - Toma Džusy`}
     description={data.description}
   >
-    <!-- Flex container for full height -->
     <div class="min-h-full flex flex-col">
       <Navigation />
       
-      <!-- Main Content - grows to fill space -->
       <div class="flex-1 py-6">
-        <!-- Header -->
         <div class="text-center mb-6">
           <h1 class="text-2xl lg:text-4xl font-bold text-white mb-1">
             {data.title}
@@ -51,7 +48,6 @@ const { type, data, category } = Astro.props;
           </p>
         </div>
 
-        <!-- Products Grid -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {data.products.map((product) => (
             <a
@@ -75,7 +71,6 @@ const { type, data, category } = Astro.props;
           ))}
         </div>
 
-        <!-- Back Button -->
         <div class="mt-6 text-center">
           <a
             href="/nase-vyrobky"
@@ -86,7 +81,6 @@ const { type, data, category } = Astro.props;
         </div>
       </div>
 
-      <!-- Footer stays at bottom -->
       <Footer />
     </div>
   </Layout>
@@ -95,14 +89,11 @@ const { type, data, category } = Astro.props;
     title={`${data.name} ${data.size} - Toma Džusy`}
     description={data.description}
   >
-    <!-- Flex container for full height -->
     <div class="min-h-full flex flex-col">
       <Navigation />
       
-      <!-- Main Content - grows to fill space -->
       <div class="flex-1 py-6">
         <div class="grid lg:grid-cols-2 gap-6 items-center">
-          <!-- Product Image -->
           <div class="aspect-square relative bg-white/10 backdrop-blur-sm rounded-2xl p-6">
             <img
               src={data.image}
@@ -111,7 +102,6 @@ const { type, data, category } = Astro.props;
             />
           </div>
 
-          <!-- Product Info -->
           <div class="space-y-4">
             <div>
               <p class="text-xs font-semibold text-[#f26522] uppercase tracking-wider mb-1">
@@ -136,7 +126,6 @@ const { type, data, category } = Astro.props;
           </div>
         </div>
 
-        <!-- Related Products -->
         <div class="mt-10">
           <h2 class="text-lg font-bold text-white mb-4">
             Další příchutě
@@ -166,7 +155,6 @@ const { type, data, category } = Astro.props;
         </div>
       </div>
 
-      <!-- Footer stays at bottom -->
       <Footer />
     </div>
   </Layout>

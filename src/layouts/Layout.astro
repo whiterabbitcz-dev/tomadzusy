@@ -1,0 +1,78 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = 'Toma Džusy - Původní česká značka',
+  description = 'Vítejte u značky Toma, původní české značky s dlouholetou tradicí v oblasti výroby džusů.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="cs" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  
+  <body class="h-screen w-screen overflow-hidden bg-green-700">
+    
+    <!-- LAYER 1: Background & Side Frames (z-0) -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <!-- Radial Gradient Background -->
+      <div 
+        class="absolute inset-0"
+        style="background: radial-gradient(ellipse 70% 70% at 50% 50%, #5cb947 0%, #4aa838 20%, #3d9430 40%, #2d7a24 60%, #1e6118 80%, #154d12 100%);"
+      ></div>
+      
+      <!-- Left Fruit Column -->
+      <img 
+        src="/images/toma_back_left.png" 
+        alt="" 
+        class="absolute left-0 top-0 h-full w-auto object-cover hidden lg:block"
+        aria-hidden="true"
+      />
+      
+      <!-- Right Fruit Column -->
+      <img 
+        src="/images/toma_back_right.png" 
+        alt="" 
+        class="absolute right-0 top-0 h-full w-auto object-cover hidden lg:block"
+        aria-hidden="true"
+      />
+    </div>
+    
+    <!-- LAYER 2: Content (z-10) -->
+    <div class="relative z-10 h-full w-full flex flex-col">
+      
+      <!-- Main Scrollable Area -->
+      <main class="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide">
+        <div class="max-w-4xl mx-auto px-4 md:px-8 min-h-full">
+          <slot />
+        </div>
+      </main>
+      
+    </div>
+    
+    <script is:inline>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
