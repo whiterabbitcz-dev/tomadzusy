@@ -27,65 +27,58 @@ const {
   </head>
   <body class="h-screen w-screen overflow-hidden relative">
     
-    <!-- Background: Radial Green Gradient -->
+    <!-- Background: Radial Green Gradient (Lime center -> Forest edges) -->
     <div 
       class="fixed inset-0 z-0"
-      style="background: radial-gradient(ellipse at center, #2d6b4a 0%, #1a4d35 35%, #0f3525 70%, #0a2618 100%);"
+      style="background: radial-gradient(ellipse 80% 80% at 50% 50%, #4ade80 0%, #22c55e 25%, #16a34a 50%, #15803d 75%, #166534 100%);"
     ></div>
     
     <!-- Left Fruit Decoration -->
-    <div class="fixed left-0 top-0 bottom-0 w-[300px] xl:w-[400px] z-10 pointer-events-none hidden lg:block">
-      <!-- Top Left - Citrus/Pear -->
+    <div class="fixed left-0 top-0 bottom-0 w-[200px] lg:w-[280px] xl:w-[350px] z-10 pointer-events-none hidden md:block overflow-hidden">
+      <!-- Top Left - Pear/Leaves -->
       <img 
-        src="/images/home-5.png" 
+        src="/images/portfolio-1l-pomeranc-2.png" 
         alt="" 
-        class="absolute top-[5%] -left-[10%] w-[250px] xl:w-[320px] rotate-12 opacity-95"
+        class="absolute -top-10 -left-16 w-[180px] lg:w-[240px] xl:w-[300px] rotate-[-20deg] opacity-90"
         aria-hidden="true"
       />
-      <!-- Middle Left - Orange slices -->
+      <!-- Middle Left -->
       <img 
-        src="/images/home-6.png" 
+        src="/images/portfolio-1l-pomeranc-3.png" 
         alt="" 
-        class="absolute top-[25%] -left-[5%] w-[200px] xl:w-[280px] -rotate-6 opacity-95"
+        class="absolute top-1/3 -left-12 w-[160px] lg:w-[200px] xl:w-[260px] rotate-[10deg] opacity-90"
         aria-hidden="true"
       />
-      <!-- Bottom Left - Strawberries -->
+      <!-- Bottom Left -->
       <img 
-        src="/images/home-7.png" 
+        src="/images/portfolio-1l-pomeranc-4.png" 
         alt="" 
-        class="absolute bottom-[15%] -left-[8%] w-[220px] xl:w-[300px] rotate-3 opacity-95"
-        aria-hidden="true"
-      />
-      <!-- Extra bottom fruit -->
-      <img 
-        src="/images/home-8.png" 
-        alt="" 
-        class="absolute bottom-[5%] left-[5%] w-[180px] xl:w-[240px] -rotate-12 opacity-90"
+        class="absolute bottom-20 -left-10 w-[180px] lg:w-[220px] xl:w-[280px] rotate-[-15deg] opacity-90"
         aria-hidden="true"
       />
     </div>
     
     <!-- Right Fruit Decoration -->
-    <div class="fixed right-0 top-0 bottom-0 w-[300px] xl:w-[400px] z-10 pointer-events-none hidden lg:block">
-      <!-- Top Right - Pineapple/Tropical -->
+    <div class="fixed right-0 top-0 bottom-0 w-[200px] lg:w-[280px] xl:w-[350px] z-10 pointer-events-none hidden md:block overflow-hidden">
+      <!-- Top Right -->
       <img 
-        src="/images/home-9.png" 
+        src="/images/portfolio-1l-pomeranc-5.png" 
         alt="" 
-        class="absolute top-[3%] -right-[8%] w-[280px] xl:w-[350px] -rotate-12 opacity-95"
+        class="absolute -top-10 -right-16 w-[200px] lg:w-[260px] xl:w-[320px] rotate-[15deg] opacity-90"
         aria-hidden="true"
       />
-      <!-- Middle Right - Mixed fruits -->
+      <!-- Middle Right -->
       <img 
-        src="/images/home-10.png" 
+        src="/images/portfolio-1l-pomeranc-6.png" 
         alt="" 
-        class="absolute top-[30%] -right-[5%] w-[220px] xl:w-[300px] rotate-6 opacity-95"
+        class="absolute top-1/3 -right-12 w-[180px] lg:w-[220px] xl:w-[280px] rotate-[-10deg] opacity-90"
         aria-hidden="true"
       />
-      <!-- Bottom Right - Citrus -->
+      <!-- Bottom Right -->
       <img 
-        src="/images/home-11.png" 
+        src="/images/portfolio-1l-pomeranc-7.png" 
         alt="" 
-        class="absolute bottom-[20%] -right-[10%] w-[240px] xl:w-[320px] -rotate-3 opacity-95"
+        class="absolute bottom-16 -right-10 w-[180px] lg:w-[240px] xl:w-[300px] rotate-[20deg] opacity-90"
         aria-hidden="true"
       />
     </div>
@@ -95,7 +88,9 @@ const {
       
       <!-- Content Area (scrollable) -->
       <main class="flex-1 overflow-y-auto scrollbar-hide">
-        <slot />
+        <div class="max-w-5xl mx-auto px-4 md:px-8 lg:px-12">
+          <slot />
+        </div>
       </main>
       
     </div>
