@@ -27,73 +27,36 @@ const {
   </head>
   <body class="h-screen w-screen overflow-hidden relative">
     
-    <!-- Background: Radial Green Gradient (Lime center -> Forest edges) -->
+    <!-- Background: Radial Green Gradient -->
     <div 
       class="fixed inset-0 z-0"
-      style="background: radial-gradient(ellipse 80% 80% at 50% 50%, #4ade80 0%, #22c55e 25%, #16a34a 50%, #15803d 75%, #166534 100%);"
+      style="background: radial-gradient(ellipse 70% 70% at 50% 50%, #5cb947 0%, #4aa838 20%, #3d9430 40%, #2d7a24 60%, #1e6118 80%, #154d12 100%);"
     ></div>
     
-    <!-- Left Fruit Decoration -->
-    <div class="fixed left-0 top-0 bottom-0 w-[200px] lg:w-[280px] xl:w-[350px] z-10 pointer-events-none hidden md:block overflow-hidden">
-      <!-- Top Left - Pear/Leaves -->
-      <img 
-        src="/images/portfolio-1l-pomeranc-2.png" 
-        alt="" 
-        class="absolute -top-10 -left-16 w-[180px] lg:w-[240px] xl:w-[300px] rotate-[-20deg] opacity-90"
-        aria-hidden="true"
-      />
-      <!-- Middle Left -->
-      <img 
-        src="/images/portfolio-1l-pomeranc-3.png" 
-        alt="" 
-        class="absolute top-1/3 -left-12 w-[160px] lg:w-[200px] xl:w-[260px] rotate-[10deg] opacity-90"
-        aria-hidden="true"
-      />
-      <!-- Bottom Left -->
-      <img 
-        src="/images/portfolio-1l-pomeranc-4.png" 
-        alt="" 
-        class="absolute bottom-20 -left-10 w-[180px] lg:w-[220px] xl:w-[280px] rotate-[-15deg] opacity-90"
-        aria-hidden="true"
-      />
-    </div>
+    <!-- Left Fruit Column -->
+    <img 
+      src="/images/toma_back_left.png" 
+      alt="" 
+      class="fixed left-0 top-0 h-full w-auto z-10 object-cover hidden lg:block"
+      aria-hidden="true"
+    />
     
-    <!-- Right Fruit Decoration -->
-    <div class="fixed right-0 top-0 bottom-0 w-[200px] lg:w-[280px] xl:w-[350px] z-10 pointer-events-none hidden md:block overflow-hidden">
-      <!-- Top Right -->
-      <img 
-        src="/images/portfolio-1l-pomeranc-5.png" 
-        alt="" 
-        class="absolute -top-10 -right-16 w-[200px] lg:w-[260px] xl:w-[320px] rotate-[15deg] opacity-90"
-        aria-hidden="true"
-      />
-      <!-- Middle Right -->
-      <img 
-        src="/images/portfolio-1l-pomeranc-6.png" 
-        alt="" 
-        class="absolute top-1/3 -right-12 w-[180px] lg:w-[220px] xl:w-[280px] rotate-[-10deg] opacity-90"
-        aria-hidden="true"
-      />
-      <!-- Bottom Right -->
-      <img 
-        src="/images/portfolio-1l-pomeranc-7.png" 
-        alt="" 
-        class="absolute bottom-16 -right-10 w-[180px] lg:w-[240px] xl:w-[300px] rotate-[20deg] opacity-90"
-        aria-hidden="true"
-      />
-    </div>
+    <!-- Right Fruit Column -->
+    <img 
+      src="/images/toma_back_right.png" 
+      alt="" 
+      class="fixed right-0 top-0 h-full w-auto z-10 object-cover hidden lg:block"
+      aria-hidden="true"
+    />
     
-    <!-- Main Frame Container -->
-    <div class="relative z-20 h-screen flex flex-col">
-      
-      <!-- Content Area (scrollable) -->
-      <main class="flex-1 overflow-y-auto scrollbar-hide">
-        <div class="max-w-5xl mx-auto px-4 md:px-8 lg:px-12">
+    <!-- Main Scrollable Content Area -->
+    <main class="relative z-20 h-full overflow-y-auto scrollbar-hide">
+      <div class="min-h-full flex flex-col">
+        <div class="max-w-4xl mx-auto w-full px-4 md:px-8 flex-1 flex flex-col">
           <slot />
         </div>
-      </main>
-      
-    </div>
+      </div>
+    </main>
     
     <!-- Netlify Identity Widget Script -->
     <script is:inline>

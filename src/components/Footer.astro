@@ -2,56 +2,45 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="relative z-50 py-4 border-t border-white/10">
-  <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<footer class="py-4 border-t border-white/10 mt-auto">
+  <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
     <!-- Copyright and Partner Links -->
-    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-      <p class="text-xs text-white/70">
+    <div class="flex flex-col md:flex-row items-center gap-3 md:gap-5">
+      <p class="text-xs text-white/60">
         <a 
           href="https://www.mattoni1873.cz/" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="hover:text-toma-orange transition-colors"
+          class="hover:text-[#f26522] transition-colors"
         >
           © {currentYear} Mattoni 1873 a.s.
         </a>
       </p>
 
       <div class="flex items-center gap-4">
-        <!-- Mattoni Logo -->
         <a 
           href="https://www.mattoni1873.cz/" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="hover:opacity-80 transition-opacity"
+          class="text-xs text-white/50 hover:text-white transition-colors"
         >
-          <img 
-            src="/images/Mattoni" 
-            alt="Mattoni 1873" 
-            class="h-5 brightness-0 invert opacity-60 hover:opacity-100"
-          />
+          Mattoni 1873
         </a>
 
-        <!-- Zálohujme -->
         <a 
           href="https://www.zalohujme.cz/" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="hover:opacity-80 transition-opacity"
+          class="text-xs text-white/50 hover:text-white transition-colors"
         >
-          <img 
-            src="/images/Zálohujme" 
-            alt="Zálohujme" 
-            class="h-5 brightness-0 invert opacity-60 hover:opacity-100"
-          />
+          Zálohujme
         </a>
 
-        <!-- Zaperli Link -->
         <a 
           href="https://zaperli.cz/shop/category/toma" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="text-xs text-white/60 hover:text-toma-orange transition-colors font-medium"
+          class="text-xs text-white/50 hover:text-[#f26522] transition-colors"
         >
           zaperli.cz
         </a>
@@ -59,13 +48,12 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Social Media Links -->
-    <div class="flex items-center gap-3">
-      <!-- Facebook -->
+    <div class="flex items-center gap-2">
       <a 
         href="https://www.facebook.com/tomaczsk" 
         target="_blank" 
         rel="noopener noreferrer"
-        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-toma-orange text-white transition-colors"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#f26522] text-white transition-colors"
         aria-label="Facebook"
       >
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -73,12 +61,11 @@ const currentYear = new Date().getFullYear();
         </svg>
       </a>
 
-      <!-- Instagram -->
       <a 
         href="https://www.instagram.com/toma_dzusy_cz/" 
         target="_blank" 
         rel="noopener noreferrer"
-        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-toma-orange text-white transition-colors"
+        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#f26522] text-white transition-colors"
         aria-label="Instagram"
       >
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
