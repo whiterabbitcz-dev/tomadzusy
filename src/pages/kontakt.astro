@@ -8,87 +8,91 @@ import Footer from '../components/Footer.astro';
   title="Kontakt - Toma Džusy"
   description="Kontaktujte nás a sdělte nám své příběhy s našimi výrobky."
 >
-  <Navigation />
-  
-  <!-- Main Content -->
-  <div class="flex-1 py-6">
-    <div class="grid lg:grid-cols-2 gap-8 items-start">
-      
-      <!-- Left Side - Form -->
-      <div>
-        <div class="mb-5">
-          <h1 class="text-2xl lg:text-3xl font-bold text-white mb-2">
-            Kontaktujte nás
-          </h1>
-          <p class="text-white/80 text-sm">
-            Jsme tu pro vás. Sdílejte s námi své příběhy s Toma džusy!
-          </p>
+  <!-- Flex container for full height -->
+  <div class="min-h-full flex flex-col">
+    <Navigation />
+    
+    <!-- Main Content - grows to fill space -->
+    <div class="flex-1 py-6">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        
+        <!-- Left Side - Form -->
+        <div>
+          <div class="mb-5">
+            <h1 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+              Kontaktujte nás
+            </h1>
+            <p class="text-white/80 text-sm">
+              Jsme tu pro vás. Sdílejte s námi své příběhy s Toma džusy!
+            </p>
+          </div>
+
+          <form 
+            name="kontakt"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-3"
+          >
+            <input type="hidden" name="form-name" value="kontakt" />
+            <p class="hidden"><input name="bot-field" /></p>
+
+            <div class="grid grid-cols-2 gap-3">
+              <input
+                type="text"
+                name="jmeno"
+                required
+                class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-[#f26522] focus:border-transparent transition-all text-sm"
+                placeholder="Jméno"
+              />
+              <input
+                type="text"
+                name="prijmeni"
+                required
+                class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-[#f26522] focus:border-transparent transition-all text-sm"
+                placeholder="Příjmení"
+              />
+            </div>
+
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-[#f26522] focus:border-transparent transition-all text-sm"
+              placeholder="Email"
+            />
+
+            <textarea
+              name="zprava"
+              required
+              rows="3"
+              class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-[#f26522] focus:border-transparent transition-all resize-none text-sm"
+              placeholder="Vaše zpráva"
+            ></textarea>
+
+            <button type="submit" class="btn-toma w-full text-sm">
+              Odeslat zprávu
+            </button>
+          </form>
         </div>
 
-        <form 
-          name="kontakt"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          class="space-y-3"
-        >
-          <input type="hidden" name="form-name" value="kontakt" />
-          <p class="hidden"><input name="bot-field" /></p>
+        <!-- Right Side - Image Gallery -->
+        <div class="grid grid-cols-2 gap-3">
+          {[1, 2, 3, 4].map((num) => (
+            <div class="aspect-square overflow-hidden rounded-xl bg-white/10">
+              <img
+                src={`/images/kontakt-${num}.png`}
+                alt={`Toma džusy ${num}`}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+        </div>
 
-          <div class="grid grid-cols-2 gap-3">
-            <input
-              type="text"
-              name="jmeno"
-              required
-              class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-[#f26522] focus:border-transparent transition-all text-sm"
-              placeholder="Jméno"
-            />
-            <input
-              type="text"
-              name="prijmeni"
-              required
-              class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-[#f26522] focus:border-transparent transition-all text-sm"
-              placeholder="Příjmení"
-            />
-          </div>
-
-          <input
-            type="email"
-            name="email"
-            required
-            class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-[#f26522] focus:border-transparent transition-all text-sm"
-            placeholder="Email"
-          />
-
-          <textarea
-            name="zprava"
-            required
-            rows="3"
-            class="w-full px-4 py-2.5 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:ring-2 focus:ring-[#f26522] focus:border-transparent transition-all resize-none text-sm"
-            placeholder="Vaše zpráva"
-          ></textarea>
-
-          <button type="submit" class="btn-toma w-full text-sm">
-            Odeslat zprávu
-          </button>
-        </form>
       </div>
-
-      <!-- Right Side - Image Gallery -->
-      <div class="grid grid-cols-2 gap-3">
-        {[1, 2, 3, 4].map((num) => (
-          <div class="aspect-square overflow-hidden rounded-xl bg-white/10">
-            <img
-              src={`/images/kontakt-${num}.png`}
-              alt={`Toma džusy ${num}`}
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-        ))}
-      </div>
-
     </div>
-  </div>
 
-  <Footer />
+    <!-- Footer stays at bottom -->
+    <Footer />
+  </div>
 </Layout>

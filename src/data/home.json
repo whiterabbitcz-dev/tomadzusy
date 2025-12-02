@@ -11,17 +11,17 @@
       },
       {
         "id": "slide-2",
-        "image": "/images/home-2.png",
+        "image": "/images/home-3.png",
         "alt": "Toma džusy - slide 2"
       },
       {
         "id": "slide-3",
-        "image": "/images/home-3.png",
+        "image": "/images/home-4.png",
         "alt": "Toma džusy - slide 3"
       },
       {
         "id": "slide-4",
-        "image": "/images/home-4.png",
+        "image": "/images/home-5.png",
         "alt": "Toma džusy - slide 4"
       }
     ]
@@ -34,4 +34,3 @@
     ]
   }
 }
-

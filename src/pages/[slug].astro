@@ -32,132 +32,142 @@ const { type, data, category } = Astro.props;
     title={`${data.title} ${data.subtitle} - Toma Džusy`}
     description={data.description}
   >
-    <Navigation />
-    
-    <div class="flex-1 py-6">
-      <!-- Header -->
-      <div class="text-center mb-6">
-        <h1 class="text-2xl lg:text-4xl font-bold text-white mb-1">
-          {data.title}
-        </h1>
-        <p class="text-lg lg:text-xl text-white/80 mb-2">
-          {data.subtitle}
-        </p>
-        <p class="text-white/60 text-sm max-w-md mx-auto">
-          {data.description}
-        </p>
-      </div>
+    <!-- Flex container for full height -->
+    <div class="min-h-full flex flex-col">
+      <Navigation />
+      
+      <!-- Main Content - grows to fill space -->
+      <div class="flex-1 py-6">
+        <!-- Header -->
+        <div class="text-center mb-6">
+          <h1 class="text-2xl lg:text-4xl font-bold text-white mb-1">
+            {data.title}
+          </h1>
+          <p class="text-lg lg:text-xl text-white/80 mb-2">
+            {data.subtitle}
+          </p>
+          <p class="text-white/60 text-sm max-w-md mx-auto">
+            {data.description}
+          </p>
+        </div>
 
-      <!-- Products Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        {data.products.map((product) => (
+        <!-- Products Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          {data.products.map((product) => (
+            <a
+              href={`/${product.slug}`}
+              class="group bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+            >
+              <div class="aspect-square relative overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-2.5 border-t border-white/10">
+                <h3 class="text-sm font-bold text-white group-hover:text-[#f26522] transition-colors">
+                  {product.name}
+                </h3>
+                <p class="text-xs text-white/60">{product.size}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-6 text-center">
           <a
-            href={`/${product.slug}`}
-            class="group bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+            href="/nase-vyrobky"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full transition-all text-sm"
           >
-            <div class="aspect-square relative overflow-hidden">
-              <img
-                src={product.image}
-                alt={product.name}
-                class="w-full h-full object-contain p-3 transition-transform duration-300 group-hover:scale-110"
-              />
-            </div>
-            <div class="p-2.5 border-t border-white/10">
-              <h3 class="text-sm font-bold text-white group-hover:text-[#f26522] transition-colors">
-                {product.name}
-              </h3>
-              <p class="text-xs text-white/60">{product.size}</p>
-            </div>
+            ← Zpět na kategorie
           </a>
-        ))}
+        </div>
       </div>
 
-      <!-- Back Button -->
-      <div class="mt-6 text-center">
-        <a
-          href="/nase-vyrobky"
-          class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full transition-all text-sm"
-        >
-          ← Zpět na kategorie
-        </a>
-      </div>
+      <!-- Footer stays at bottom -->
+      <Footer />
     </div>
-
-    <Footer />
   </Layout>
 ) : (
   <Layout 
     title={`${data.name} ${data.size} - Toma Džusy`}
     description={data.description}
   >
-    <Navigation />
-    
-    <div class="flex-1 py-6">
-      <div class="grid lg:grid-cols-2 gap-6 items-center">
-        <!-- Product Image -->
-        <div class="aspect-square relative bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-          <img
-            src={data.image}
-            alt={data.name}
-            class="w-full h-full object-contain drop-shadow-xl"
-          />
-        </div>
-
-        <!-- Product Info -->
-        <div class="space-y-4">
-          <div>
-            <p class="text-xs font-semibold text-[#f26522] uppercase tracking-wider mb-1">
-              {category.title} {category.subtitle}
-            </p>
-            <h1 class="text-2xl lg:text-3xl font-bold text-white mb-2">
-              {data.name}
-            </h1>
-            <p class="text-lg text-white/70 mb-3">
-              {data.size}
-            </p>
-            <p class="text-white/80 text-sm leading-relaxed">
-              {data.description}
-            </p>
+    <!-- Flex container for full height -->
+    <div class="min-h-full flex flex-col">
+      <Navigation />
+      
+      <!-- Main Content - grows to fill space -->
+      <div class="flex-1 py-6">
+        <div class="grid lg:grid-cols-2 gap-6 items-center">
+          <!-- Product Image -->
+          <div class="aspect-square relative bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+            <img
+              src={data.image}
+              alt={data.name}
+              class="w-full h-full object-contain drop-shadow-xl"
+            />
           </div>
 
-          <div class="flex flex-wrap gap-3">
-            <a href={`/${category.slug}`} class="btn-toma text-sm">
-              Další příchutě
-            </a>
+          <!-- Product Info -->
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs font-semibold text-[#f26522] uppercase tracking-wider mb-1">
+                {category.title} {category.subtitle}
+              </p>
+              <h1 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                {data.name}
+              </h1>
+              <p class="text-lg text-white/70 mb-3">
+                {data.size}
+              </p>
+              <p class="text-white/80 text-sm leading-relaxed">
+                {data.description}
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a href={`/${category.slug}`} class="btn-toma text-sm">
+                Další příchutě
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-10">
+          <h2 class="text-lg font-bold text-white mb-4">
+            Další příchutě
+          </h2>
+          
+          <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2">
+            {category.products.filter(p => p.slug !== data.slug).slice(0, 6).map((product) => (
+              <a
+                href={`/${product.slug}`}
+                class="group bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300 overflow-hidden"
+              >
+                <div class="aspect-square relative overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div class="p-1.5 border-t border-white/10">
+                  <h3 class="font-medium text-white text-xs group-hover:text-[#f26522] transition-colors truncate">
+                    {product.name}
+                  </h3>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
-      <!-- Related Products -->
-      <div class="mt-10">
-        <h2 class="text-lg font-bold text-white mb-4">
-          Další příchutě
-        </h2>
-        
-        <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2">
-          {category.products.filter(p => p.slug !== data.slug).slice(0, 6).map((product) => (
-            <a
-              href={`/${product.slug}`}
-              class="group bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300 overflow-hidden"
-            >
-              <div class="aspect-square relative overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  class="w-full h-full object-contain p-2 transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <div class="p-1.5 border-t border-white/10">
-                <h3 class="font-medium text-white text-xs group-hover:text-[#f26522] transition-colors truncate">
-                  {product.name}
-                </h3>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
+      <!-- Footer stays at bottom -->
+      <Footer />
     </div>
-
-    <Footer />
   </Layout>
 )}
