@@ -13,56 +13,39 @@
 }
 
 @layer components {
-  /* TOMA Button - Pill shape with leaf decoration */
+  /* TOMA Button - Pill shape with leaf decoration (Pixel Perfect) */
   .btn-toma {
     @apply relative inline-flex items-center justify-center;
-    @apply px-8 py-4;
-    @apply bg-[#f26522] hover:bg-[#e55a15];
-    @apply text-white font-bold uppercase tracking-wide;
+    @apply px-10 py-4 pr-14;
+    @apply bg-[#e62e2a] hover:bg-[#d12824];
+    @apply text-white font-bold uppercase tracking-wider text-lg;
     @apply rounded-full;
-    @apply transition-all duration-300;
-    @apply shadow-lg hover:shadow-xl;
+    @apply transition-all duration-300 ease-out;
+    @apply shadow-xl hover:shadow-2xl;
     @apply hover:scale-105;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
   }
   
+  /* Leaf decoration - positioned on right edge, slightly overlapping */
   .btn-toma::after {
     content: '';
     position: absolute;
-    top: -8px;
-    right: -4px;
-    width: 32px;
-    height: 32px;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%) rotate(15deg);
+    width: 28px;
+    height: 28px;
     background-image: url('/images/toma_leaf.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     transition: transform 0.3s ease;
     pointer-events: none;
+    z-index: 10;
   }
   
   .btn-toma:hover::after {
-    transform: rotate(-15deg) scale(1.1);
-  }
-  
-  /* Alternative: Button with inline leaf */
-  .btn-toma-leaf {
-    @apply relative inline-flex items-center justify-center gap-2;
-    @apply px-8 py-4;
-    @apply bg-[#f26522] hover:bg-[#e55a15];
-    @apply text-white font-bold uppercase tracking-wide;
-    @apply rounded-full;
-    @apply transition-all duration-300;
-    @apply shadow-lg hover:shadow-xl;
-    @apply hover:scale-105;
-  }
-  
-  .btn-toma-leaf .leaf {
-    @apply absolute -top-2 -right-1 w-8 h-8;
-    @apply transition-transform duration-300;
-  }
-  
-  .btn-toma-leaf:hover .leaf {
-    @apply rotate-[-15deg] scale-110;
+    transform: translateY(-50%) rotate(-5deg) scale(1.15);
   }
 }
 

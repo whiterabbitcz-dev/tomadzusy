@@ -64,7 +64,7 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
   const prevSlide = () => paginate(-1);
 
   return (
-    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
+    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentIndex}
@@ -95,7 +95,7 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
           <img
             src={slides[currentIndex].image}
             alt={slides[currentIndex].alt}
-            className="w-full h-full object-cover rounded-2xl shadow-2xl"
+            className="w-full h-full object-cover rounded-3xl"
             draggable={false}
           />
         </motion.div>
