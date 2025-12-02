@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import HeroSlider from '../components/HeroSlider';
+import homeData from '../data/home.json';
+---
+
+<Layout title="Toma Džusy - Původní česká značka">
+  <Navigation />
+  
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center">
+      <div class="container-custom grid lg:grid-cols-2 gap-12 items-center py-12">
+        <!-- Left Side - Slider -->
+        <div class="order-2 lg:order-1">
+          <HeroSlider slides={homeData.hero.slides} client:load />
+        </div>
+
+        <!-- Right Side - Content -->
+        <div class="order-1 lg:order-2 space-y-8">
+          <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight whitespace-pre-line">
+            {homeData.hero.title}
+          </h1>
+
+          <a
+            href={homeData.hero.buttonLink}
+            class="inline-flex items-center gap-3 px-8 py-4 bg-toma-orange text-white font-semibold rounded-full hover:bg-orange-600 transition-all hover:scale-105 shadow-lg"
+          >
+            <span>{homeData.hero.buttonText}</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-24 bg-gradient-to-b from-white to-orange-50">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto space-y-8 text-center">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
+            {homeData.about.title}
+          </h2>
+
+          <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+            {homeData.about.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+

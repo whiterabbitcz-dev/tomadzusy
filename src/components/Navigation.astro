@@ -1,0 +1,80 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'domů' },
+  { href: '/nase-vyrobky', label: 'naše výrobky' },
+  { href: '/kontakt', label: 'kontakt' },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+  <div class="container-custom">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img 
+          src="/logo-toma.svg" 
+          alt="Toma Džusy" 
+          class="h-12 w-auto"
+        />
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'text-sm font-medium transition-colors hover:text-toma-orange',
+              currentPath === link.href ? 'text-toma-orange' : 'text-gray-700'
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-button"
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100"
+        aria-label="Menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+    <div class="container-custom py-4 space-y-2">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'block px-4 py-2 rounded-lg text-sm font-medium transition-colors',
+            currentPath === link.href 
+              ? 'bg-toma-orange/10 text-toma-orange' 
+              : 'text-gray-700 hover:bg-gray-100'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
+

@@ -1,0 +1,257 @@
+{
+  "categories": [
+    {
+      "id": "1l",
+      "name": "na doma",
+      "title": "Toma",
+      "subtitle": "na doma",
+      "description": "1L balení ideální pro celou rodinu",
+      "slug": "portfolio-1l",
+      "image": "/images/portfolio-1.jpg",
+      "products": [
+        {
+          "slug": "portfolio-1l-pomeranc",
+          "name": "Pomeranč",
+          "category": "1l",
+          "image": "/images/portfolio-1l-pomeranc-1.png",
+          "size": "1L",
+          "description": "100% pomerančový džus"
+        },
+        {
+          "slug": "portfolio-1l-jablko",
+          "name": "Jablko",
+          "category": "1l",
+          "image": "/images/portfolio-1l-1.jpg",
+          "size": "1L",
+          "description": "100% jablečný džus"
+        },
+        {
+          "slug": "portfolio-1l-hruska",
+          "name": "Hruška",
+          "category": "1l",
+          "image": "/images/portfolio-1l-1.jpg",
+          "size": "1L",
+          "description": "100% hruškový džus"
+        },
+        {
+          "slug": "portfolio-1l-broskev",
+          "name": "Broskev",
+          "category": "1l",
+          "image": "/images/portfolio-1l-1.jpg",
+          "size": "1L",
+          "description": "Broskvový nápoj"
+        },
+        {
+          "slug": "portfolio-1l-multivitamin",
+          "name": "Multivitamin",
+          "category": "1l",
+          "image": "/images/portfolio-1l-1.jpg",
+          "size": "1L",
+          "description": "Multivitaminový džus"
+        },
+        {
+          "slug": "portfolio-1l-multifruit",
+          "name": "Multifruit",
+          "category": "1l",
+          "image": "/images/portfolio-1l-1.jpg",
+          "size": "1L",
+          "description": "Ovocný nápoj"
+        },
+        {
+          "slug": "portfolio-1l-cerveny-multifruit",
+          "name": "Červený multifruit",
+          "category": "1l",
+          "image": "/images/portfolio-1l-1.jpg",
+          "size": "1L",
+          "description": "Ovocný nápoj"
+        }
+      ]
+    },
+    {
+      "id": "piticka",
+      "name": "pro nejmenší",
+      "title": "Toma",
+      "subtitle": "pro nejmenší",
+      "description": "Píťička pro děti",
+      "slug": "portfolio-piticka",
+      "image": "/images/portfolio-2.jpg",
+      "products": [
+        {
+          "slug": "portfolio-piticka-pomeranc",
+          "name": "Pomeranč",
+          "category": "piticka",
+          "image": "/images/portfolio-piticka-pomeranc-1.png",
+          "size": "0.2L",
+          "description": "Pomerančový nápoj pro děti"
+        },
+        {
+          "slug": "portfolio-piticka-jablko",
+          "name": "Jablko",
+          "category": "piticka",
+          "image": "/images/portfolio-piticka-jablko-1.png",
+          "size": "0.2L",
+          "description": "Jablečný nápoj pro děti"
+        },
+        {
+          "slug": "portfolio-piticka-jahoda",
+          "name": "Jahoda",
+          "category": "piticka",
+          "image": "/images/portfolio-piticka-jahoda-1.png",
+          "size": "0.2L",
+          "description": "Jahodový nápoj pro děti"
+        },
+        {
+          "slug": "portfolio-piticka-mandarinka",
+          "name": "Mandarinka",
+          "category": "piticka",
+          "image": "/images/portfolio-piticka-mandarinka-1.png",
+          "size": "0.2L",
+          "description": "Mandarinkový nápoj pro děti"
+        }
+      ]
+    },
+    {
+      "id": "nacesty",
+      "name": "na cesty",
+      "title": "Toma",
+      "subtitle": "na cesty",
+      "description": "Praktické balení na cesty",
+      "slug": "portfolio-nacesty",
+      "image": "/images/portfolio-3.jpg",
+      "products": [
+        {
+          "slug": "portfolio-nacesty-330-pomeranc",
+          "name": "Pomeranč 330ml",
+          "category": "nacesty",
+          "image": "/images/portfolio-nacesty-330-pomeranc-1.png",
+          "size": "0.33L",
+          "description": "Pomerančový džus"
+        },
+        {
+          "slug": "portfolio-nacesty-330-jablko",
+          "name": "Jablko 330ml",
+          "category": "nacesty",
+          "image": "/images/portfolio-nacesty-330-pomeranc-1.png",
+          "size": "0.33L",
+          "description": "Jablečný džus"
+        },
+        {
+          "slug": "portfolio-nacesty-330-cernyrybiz",
+          "name": "Černý rybíz 330ml",
+          "category": "nacesty",
+          "image": "/images/portfolio-nacesty-330-pomeranc-1.png",
+          "size": "0.33L",
+          "description": "Černorybízový džus"
+        },
+        {
+          "slug": "portfolio-nacesty-330-broskev",
+          "name": "Broskev 330ml",
+          "category": "nacesty",
+          "image": "/images/portfolio-nacesty-330-pomeranc-1.png",
+          "size": "0.33L",
+          "description": "Broskvový džus"
+        },
+        {
+          "slug": "portfolio-nacesty-500-pomeranc",
+          "name": "Pomeranč 500ml",
+          "category": "nacesty",
+          "image": "/images/portfolio-nacesty-1.png",
+          "size": "0.5L",
+          "description": "Pomerančový džus"
+        },
+        {
+          "slug": "portfolio-nacesty-500-jablko",
+          "name": "Jablko 500ml",
+          "category": "nacesty",
+          "image": "/images/portfolio-nacesty-1.png",
+          "size": "0.5L",
+          "description": "Jablečný džus"
+        },
+        {
+          "slug": "portfolio-nacesty-500-multivitamin",
+          "name": "Multivitamin 500ml",
+          "category": "nacesty",
+          "image": "/images/portfolio-nacesty-1.png",
+          "size": "0.5L",
+          "description": "Multivitaminový džus"
+        },
+        {
+          "slug": "portfolio-nacesty-500-visen",
+          "name": "Višeň 500ml",
+          "category": "nacesty",
+          "image": "/images/portfolio-nacesty-1.png",
+          "size": "0.5L",
+          "description": "Višňový džus"
+        }
+      ]
+    },
+    {
+      "id": "gastro",
+      "name": "v restauracích",
+      "title": "Toma",
+      "subtitle": "v restauracích",
+      "description": "Gastro balení pro restaurace",
+      "slug": "portfolio-gastro",
+      "image": "/images/portfolio-4.png",
+      "products": [
+        {
+          "slug": "portfolio-gastro-pomeranc",
+          "name": "Pomeranč",
+          "category": "gastro",
+          "image": "/images/portfolio-gastro-pomeranc-1.png",
+          "size": "0.25L",
+          "description": "Pomerančový džus"
+        },
+        {
+          "slug": "portfolio-gastro-jablko",
+          "name": "Jablko",
+          "category": "gastro",
+          "image": "/images/portfolio-gastro-1.png",
+          "size": "0.25L",
+          "description": "Jablečný džus"
+        },
+        {
+          "slug": "portfolio-gastro-hruska",
+          "name": "Hruška",
+          "category": "gastro",
+          "image": "/images/portfolio-gastro-1.png",
+          "size": "0.25L",
+          "description": "Hruškový džus"
+        },
+        {
+          "slug": "portfolio-gastro-broskev",
+          "name": "Broskev",
+          "category": "gastro",
+          "image": "/images/portfolio-gastro-1.png",
+          "size": "0.25L",
+          "description": "Broskvový džus"
+        },
+        {
+          "slug": "portfolio-gastro-jahoda",
+          "name": "Jahoda",
+          "category": "gastro",
+          "image": "/images/portfolio-gastro-1.png",
+          "size": "0.25L",
+          "description": "Jahodový džus"
+        },
+        {
+          "slug": "portfolio-gastro-cernyrybiz",
+          "name": "Černý rybíz",
+          "category": "gastro",
+          "image": "/images/portfolio-gastro-1.png",
+          "size": "0.25L",
+          "description": "Černorybízový džus"
+        },
+        {
+          "slug": "portfolio-gastro-multivitamin",
+          "name": "Multivitamin",
+          "category": "gastro",
+          "image": "/images/portfolio-gastro-1.png",
+          "size": "0.25L",
+          "description": "Multivitaminový džus"
+        }
+      ]
+    }
+  ]
+}
+

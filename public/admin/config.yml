@@ -1,0 +1,68 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "home"
+        label: "Homepage Content"
+        file: "src/data/home.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+              - { label: "Button Link", name: "buttonLink", widget: "string" }
+              - label: "Slides"
+                name: "slides"
+                widget: "list"
+                fields:
+                  - { label: "ID", name: "id", widget: "string" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string" }
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+  - name: "products"
+    label: "Produkty"
+    files:
+      - name: "products"
+        label: "Produkty a Kategorie"
+        file: "src/data/products.json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - label: "Products"
+                name: "products"
+                widget: "list"
+                fields:
+                  - { label: "Slug", name: "slug", widget: "string" }
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Category", name: "category", widget: "string" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Size", name: "size", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+

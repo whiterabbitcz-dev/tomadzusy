@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "title": "Váš svět\nplný ovoce",
+    "buttonText": "ZJISTIT VÍCE",
+    "buttonLink": "/nase-vyrobky",
+    "slides": [
+      {
+        "id": "slide-1",
+        "image": "/images/home-1.png",
+        "alt": "Toma džusy - slide 1"
+      },
+      {
+        "id": "slide-2",
+        "image": "/images/home-2.png",
+        "alt": "Toma džusy - slide 2"
+      },
+      {
+        "id": "slide-3",
+        "image": "/images/home-3.png",
+        "alt": "Toma džusy - slide 3"
+      },
+      {
+        "id": "slide-4",
+        "image": "/images/home-4.png",
+        "alt": "Toma džusy - slide 4"
+      }
+    ]
+  },
+  "about": {
+    "title": "O nás",
+    "paragraphs": [
+      "Vítejte u značky Toma, původní české značky s dlouholetou tradicí v oblasti výroby džusů, která si získala srdce mnoha generací na českém i slovenském trhu. Naše výjimečná kvalita a důraz na autentičnost nám umožnily udržet si pevné místo v povědomí zákazníků a být stále oblíbenou volbou pro milovníky ovocných šťáv.",
+      "Naše výrobky pocházejí pouze z těch nejlepších šťavnatých plodů. Ať už se jedná o 100% šťávy nebo nápoje s nižším podílem ovocné složky, vždy se můžete spolehnout na to, že neobsahují žádná umělá aromata, barviva či konzervanty. Naše produkty jsou čisté a přirozené, tak jak by to mělo být."
+    ]
+  }
+}
+
