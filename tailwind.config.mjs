@@ -7,7 +7,12 @@ export default {
         toma: {
           orange: '#FF6B00',
           yellow: '#FFD600',
-          green: '#00A651',
+          green: {
+            DEFAULT: '#00A651',
+            light: '#2d6b4a',
+            dark: '#1a3d2e',
+            darker: '#0f2a1e',
+          },
           blue: '#0066CC',
         },
       },

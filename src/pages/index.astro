@@ -7,54 +7,50 @@ import homeData from '../data/home.json';
 ---
 
 <Layout title="Toma Džusy - Původní česká značka">
-  <Navigation />
-  
-  <main class="pt-20">
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center">
-      <div class="container-custom grid lg:grid-cols-2 gap-12 items-center py-12">
-        <!-- Left Side - Slider -->
-        <div class="order-2 lg:order-1">
-          <HeroSlider slides={homeData.hero.slides} client:load />
-        </div>
-
-        <!-- Right Side - Content -->
-        <div class="order-1 lg:order-2 space-y-8">
-          <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight whitespace-pre-line">
-            {homeData.hero.title}
-          </h1>
-
-          <a
-            href={homeData.hero.buttonLink}
-            class="inline-flex items-center gap-3 px-8 py-4 bg-toma-orange text-white font-semibold rounded-full hover:bg-orange-600 transition-all hover:scale-105 shadow-lg"
-          >
-            <span>{homeData.hero.buttonText}</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="py-24 bg-gradient-to-b from-white to-orange-50">
+  <div class="min-h-screen flex flex-col">
+    <Navigation />
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 flex items-center">
       <div class="container-custom">
-        <div class="max-w-4xl mx-auto space-y-8 text-center">
-          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">
-            {homeData.about.title}
-          </h2>
-
-          <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
-            {homeData.about.paragraphs.map((paragraph) => (
-              <p>{paragraph}</p>
-            ))}
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center py-8">
+          
+          <!-- Left Side - Image Slider -->
+          <div class="order-2 lg:order-1">
+            <div class="relative max-w-lg mx-auto lg:mx-0">
+              <HeroSlider slides={homeData.hero.slides} client:load />
+            </div>
           </div>
+
+          <!-- Right Side - Content -->
+          <div class="order-1 lg:order-2 space-y-6 text-center lg:text-left">
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+              <span class="whitespace-pre-line">{homeData.hero.title}</span>
+            </h1>
+
+            <!-- CTA Button -->
+            <div>
+              <a
+                href={homeData.hero.buttonLink}
+                class="inline-flex items-center gap-3 px-8 py-4 bg-toma-orange text-white font-bold rounded-full hover:bg-orange-500 transition-all hover:scale-105 shadow-lg text-lg uppercase tracking-wide"
+              >
+                <span>{homeData.hero.buttonText}</span>
+              </a>
+            </div>
+
+            <!-- About Text -->
+            <div class="space-y-4 text-white/90 text-sm lg:text-base leading-relaxed max-w-xl">
+              {homeData.about.paragraphs.map((paragraph) => (
+                <p class="text-white/85">{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <Footer />
+    <Footer />
+  </div>
 </Layout>
-

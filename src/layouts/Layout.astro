@@ -25,8 +25,80 @@ const {
     <!-- Netlify Identity Widget -->
     <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body>
-    <slot />
+  <body class="h-screen w-screen overflow-hidden relative">
+    
+    <!-- Background: Radial Green Gradient -->
+    <div 
+      class="fixed inset-0 z-0"
+      style="background: radial-gradient(ellipse at center, #2d6b4a 0%, #1a4d35 35%, #0f3525 70%, #0a2618 100%);"
+    ></div>
+    
+    <!-- Left Fruit Decoration -->
+    <div class="fixed left-0 top-0 bottom-0 w-[300px] xl:w-[400px] z-10 pointer-events-none hidden lg:block">
+      <!-- Top Left - Citrus/Pear -->
+      <img 
+        src="/images/home-5.png" 
+        alt="" 
+        class="absolute top-[5%] -left-[10%] w-[250px] xl:w-[320px] rotate-12 opacity-95"
+        aria-hidden="true"
+      />
+      <!-- Middle Left - Orange slices -->
+      <img 
+        src="/images/home-6.png" 
+        alt="" 
+        class="absolute top-[25%] -left-[5%] w-[200px] xl:w-[280px] -rotate-6 opacity-95"
+        aria-hidden="true"
+      />
+      <!-- Bottom Left - Strawberries -->
+      <img 
+        src="/images/home-7.png" 
+        alt="" 
+        class="absolute bottom-[15%] -left-[8%] w-[220px] xl:w-[300px] rotate-3 opacity-95"
+        aria-hidden="true"
+      />
+      <!-- Extra bottom fruit -->
+      <img 
+        src="/images/home-8.png" 
+        alt="" 
+        class="absolute bottom-[5%] left-[5%] w-[180px] xl:w-[240px] -rotate-12 opacity-90"
+        aria-hidden="true"
+      />
+    </div>
+    
+    <!-- Right Fruit Decoration -->
+    <div class="fixed right-0 top-0 bottom-0 w-[300px] xl:w-[400px] z-10 pointer-events-none hidden lg:block">
+      <!-- Top Right - Pineapple/Tropical -->
+      <img 
+        src="/images/home-9.png" 
+        alt="" 
+        class="absolute top-[3%] -right-[8%] w-[280px] xl:w-[350px] -rotate-12 opacity-95"
+        aria-hidden="true"
+      />
+      <!-- Middle Right - Mixed fruits -->
+      <img 
+        src="/images/home-10.png" 
+        alt="" 
+        class="absolute top-[30%] -right-[5%] w-[220px] xl:w-[300px] rotate-6 opacity-95"
+        aria-hidden="true"
+      />
+      <!-- Bottom Right - Citrus -->
+      <img 
+        src="/images/home-11.png" 
+        alt="" 
+        class="absolute bottom-[20%] -right-[10%] w-[240px] xl:w-[320px] -rotate-3 opacity-95"
+        aria-hidden="true"
+      />
+    </div>
+    
+    <!-- Main Frame Container -->
+    <div class="relative z-20 h-screen flex flex-col">
+      
+      <!-- Content Area (scrollable) -->
+      <main class="flex-1 overflow-y-auto scrollbar-hide">
+        <slot />
+      </main>
+      
+    </div>
     
     <!-- Netlify Identity Widget Script -->
     <script is:inline>
@@ -42,4 +114,3 @@ const {
     </script>
   </body>
 </html>
-

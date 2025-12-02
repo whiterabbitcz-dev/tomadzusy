@@ -27,18 +27,21 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
 
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 300 : -300,
       opacity: 0,
+      scale: 0.9,
     }),
     center: {
       zIndex: 1,
       x: 0,
       opacity: 1,
+      scale: 1,
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 300 : -300,
       opacity: 0,
+      scale: 0.9,
     }),
   };
 
@@ -61,7 +64,7 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
   const prevSlide = () => paginate(-1);
 
   return (
-    <div className="relative w-full h-[600px] lg:h-[700px] overflow-hidden bg-gradient-to-br from-orange-50 to-yellow-50">
+    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentIndex}
@@ -72,7 +75,8 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
           exit="exit"
           transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
+            opacity: { duration: 0.3 },
+            scale: { duration: 0.3 },
           }}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
@@ -86,12 +90,12 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
               paginate(-1);
             }
           }}
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing"
         >
           <img
             src={slides[currentIndex].image}
             alt={slides[currentIndex].alt}
-            className="w-full h-full object-contain max-w-2xl"
+            className="w-full h-full object-cover rounded-2xl shadow-2xl"
             draggable={false}
           />
         </motion.div>
@@ -100,22 +104,22 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/80 hover:bg-white rounded-full shadow-lg transition-all hover:scale-110"
+        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full transition-all hover:scale-110"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6 text-gray-800" />
+        <ChevronLeft className="w-5 h-5 text-white" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/80 hover:bg-white rounded-full shadow-lg transition-all hover:scale-110"
+        className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full transition-all hover:scale-110"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6 text-gray-800" />
+        <ChevronRight className="w-5 h-5 text-white" />
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -123,10 +127,10 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
               setDirection(index > currentIndex ? 1 : -1);
               setCurrentIndex(index);
             }}
-            className={`w-3 h-3 rounded-full transition-all ${
+            className={`h-2 rounded-full transition-all ${
               index === currentIndex
-                ? 'bg-toma-orange w-8'
-                : 'bg-white/60 hover:bg-white/80'
+                ? 'bg-toma-orange w-6'
+                : 'bg-white/50 hover:bg-white/70 w-2'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -135,4 +139,3 @@ export default function HeroSlider({ slides, autoPlayInterval = 5000 }: HeroSlid
     </div>
   );
 }
-
