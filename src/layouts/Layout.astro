@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -57,17 +59,18 @@ const {
       />
     </div>
     
-    <!-- LAYER 2: Content (z-10) -->
-    <div class="relative z-10 h-full w-full flex flex-col">
-      
-      <!-- Main Scrollable Area -->
-      <main class="flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide">
-        <div class="w-full min-h-full flex flex-col">
-          <slot />
-        </div>
-      </main>
-      
-    </div>
+    <!-- LAYER 2: Fixed Header (z-50) -->
+    <Navigation />
+    
+    <!-- LAYER 3: Fixed Footer (z-50) -->
+    <Footer />
+    
+    <!-- LAYER 4: Scrollable Content (z-10) -->
+    <main class="relative z-10 h-full w-full overflow-y-auto overflow-x-hidden scrollbar-hide pt-20 pb-16">
+      <div class="w-full min-h-full px-6 md:px-8">
+        <slot />
+      </div>
+    </main>
     
     <script is:inline>
       if (window.netlifyIdentity) {

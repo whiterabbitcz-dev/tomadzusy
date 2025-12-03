@@ -1,57 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
 import HeroSlider from '../components/HeroSlider';
 import homeData from '../data/home.json';
 ---
 
 <Layout title="Toma Džusy - Původní česká značka">
-  <div class="min-h-full flex flex-col">
-    <!-- Navigation (with padding) -->
-    <div class="px-4 md:px-6 lg:px-8">
-      <Navigation />
-    </div>
-    
-    <!-- Main Content - Centered vertically and horizontally -->
-    <div class="flex-1 flex items-center justify-center py-8 md:py-12 px-4 md:px-6 lg:px-8">
-      <div class="w-full max-w-3xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          
-          <!-- Left Side - Image Slider -->
-          <div class="order-2 lg:order-1">
-            <div class="relative max-w-md mx-auto lg:mx-0">
-              <HeroSlider slides={homeData.hero.slides} client:load />
-            </div>
+  <!-- Main Content - Centered vertically and horizontally -->
+  <div class="min-h-full flex items-center justify-center py-8 md:py-12">
+    <div class="w-full max-w-3xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left Side - Image Slider -->
+        <div class="order-2 lg:order-1">
+          <div class="relative max-w-md mx-auto lg:mx-0">
+            <HeroSlider slides={homeData.hero.slides} client:load />
           </div>
-
-          <!-- Right Side - Content -->
-          <div class="order-1 lg:order-2 space-y-6 text-center lg:text-left">
-            <!-- Hero Title -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] whitespace-pre-line drop-shadow-lg">
-              {homeData.hero.title}
-            </h1>
-
-            <!-- CTA Button -->
-            <div class="pt-2">
-              <a href={homeData.hero.buttonLink} class="btn-toma">
-                {homeData.hero.buttonText}
-              </a>
-            </div>
-
-            <!-- About Paragraphs -->
-            <div class="space-y-5 text-base leading-relaxed max-w-lg mx-auto lg:mx-0">
-              {homeData.about.paragraphs.map((paragraph) => (
-                <p class="text-white/95 drop-shadow-sm">{paragraph}</p>
-              ))}
-            </div>
-          </div>
-
         </div>
+
+        <!-- Right Side - Content -->
+        <div class="order-1 lg:order-2 space-y-6 text-center lg:text-left">
+          <!-- Hero Title -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] whitespace-pre-line drop-shadow-lg">
+            {homeData.hero.title}
+          </h1>
+
+          <!-- CTA Button -->
+          <div class="pt-2">
+            <a href={homeData.hero.buttonLink} class="btn-toma">
+              {homeData.hero.buttonText}
+            </a>
+          </div>
+
+          <!-- About Paragraphs -->
+          <div class="space-y-5 text-base leading-relaxed max-w-lg mx-auto lg:mx-0">
+            {homeData.about.paragraphs.map((paragraph) => (
+              <p class="text-white/95 drop-shadow-sm">{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <!-- Footer (full width, no side padding) -->
-    <Footer />
   </div>
 </Layout>
