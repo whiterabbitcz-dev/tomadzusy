@@ -188,3 +188,4 @@ Vytvořeno pomocí metodiky **White Rabbit** - reverse engineering z origináln�
 
 **Vytvořeno s ❤️ pro Toma Džusy**
 
+

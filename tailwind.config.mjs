@@ -17,7 +17,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Signika', 'system-ui', 'sans-serif'],
       },
     },
   },

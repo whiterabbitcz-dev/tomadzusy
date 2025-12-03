@@ -66,3 +66,4 @@ collections:
                   - { label: "Size", name: "size", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
 
+

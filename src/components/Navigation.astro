@@ -25,7 +25,7 @@ const navLinks = [
         <a
           href={link.href}
           class:list={[
-            'text-sm font-medium transition-colors hover:text-[#f26522]',
+            'text-base font-semibold lowercase transition-colors hover:text-[#f26522]',
             currentPath === link.href ? 'text-[#f26522]' : 'text-white'
           ]}
         >
@@ -53,7 +53,7 @@ const navLinks = [
         <a
           href={link.href}
           class:list={[
-            'block px-4 py-3 rounded-lg text-sm font-medium transition-colors',
+            'block px-4 py-3 rounded-lg text-base font-semibold lowercase transition-colors',
             currentPath === link.href 
               ? 'bg-[#f26522]/20 text-[#f26522]' 
               : 'text-white hover:bg-white/10'
